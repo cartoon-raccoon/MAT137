@@ -1,0 +1,132 @@
+\documentclass[12pt, letterpaper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+% let's begin
+\begin{document}
+\textbf{(Q7)}
+
+\textit{(a)} True.
+\begin{proof}
+    The original statement can be expressed as:
+    \[
+        \forall p,q \in \Q, p + 2q \in \Q
+    \]
+    Since $2 = \tfrac{2}{1}$, $2 \in \Q$.
+
+    \begin{align*}
+        2q & = \frac{2}{1} \cdot \frac{q}{1}\\
+        & = \frac{2q}{1} \Rightarrow 2q \in \Q
+    \end{align*}
+    Since $\Q$ is closed under addition, $p + 2q \in \Q$.
+\end{proof}
+
+\textit{(b)} False.
+\begin{proof}
+    We can prove this by contradiction.
+
+    First, we assume the following lemma:
+
+    \[
+        p \in \Q \setminus \{0\}, q \notin \Q \Rightarrow pq \notin \Q
+    \]
+    The product of a non-zero rational number and an irrational number
+    is always an irrational number.
+
+    The negation of the given statement is:
+    \[
+        \exists p, q \notin \Q \text{ s.t. } p \neq \pm q \text{ and } pq \notin \Q\\
+    \]
+    We can assume that $\sqrt{2} \notin \Q$, so we can set $p = \sqrt{2}$ and $q = 2\sqrt{2}$.
+    This holds because of the lemma, so $p \neq \pm q$ and $p,q \notin \Q$.
+
+    Thus:
+    \begin{align*}
+        pq & = 4 \in \Q \Rightarrow pq \in \Q
+    \end{align*}
+
+    Which contradicts the given statement.
+
+\end{proof}
+\newpage
+
+\textit{(c)} True.
+\begin{proof}
+    In order to prove the given statement, we have to break it down into its components
+    and check that each of them meets the definitions for each operation.
+
+    Thus, we can break down $\tfrac{p^{2} + q}{q}$ into three components:
+    \begin{itemize}
+        \item The multiplication of $p$ and $p$, to give $p^{2}$.
+        \item The addition of $p^{2}$ and $q$, to give $p^{2} + q$.
+        \item The division of $p^{2} + q$ over $q$ to, to give $\tfrac{p^{2} + q}{q}$.
+    \end{itemize}
+    First, we check $p^{2}$.
+
+    $p^{2}$ can be defined as $\tfrac{p}{1} \cdot \tfrac{p}{1}$, from which follows:
+    \begin{align*}
+        \frac{p}{1} \cdot \frac{p}{1} & = \frac{p^{2}}{1}\\
+        & = p^{2}\\
+        & \Rightarrow p^{2} \in \Q
+    \end{align*}
+    Now that we have established that $p^{2}$ is rational, we can check $p^{2} + q$.
+    
+    By definition of rational numbers,
+    \begin{align*}
+        p^{2} + q & = \frac{p^{2}}{1} + \frac{q}{1}\\
+        & = \frac{p^{2} + q}{1}\\
+        & = p^{2} + q
+    \end{align*}
+    By (a), we can assume $p^{2} + q$ is a rational number.
+    Finally we can check the division $p^{2} + q$ by $q$.
+    \begin{align*}
+        \frac{p^{2} + q}{q} & = \frac{p^{2}}{q} + \frac{q}{q}\\
+        & = \frac{p^{2}}{q} + 1
+    \end{align*}
+    Since 1 is an integer and thus a rational number, we can focus on $\tfrac{p^{2}}{q}$.
+    \begin{align*}
+        \frac{\tfrac{p^{2}}{1}}{\tfrac{q}{1}} & \in \Q\\
+        & = \frac{p^{2}}{q}\\
+        & \Rightarrow \frac{p^{2}}{q} \in \Q
+    \end{align*}
+    This holds because $q \in \Q \setminus \{0\} \Rightarrow q \neq 0$.
+    
+    Since by (a), the sum of two rational numbers is always rational, the proof is complete.
+\end{proof}
+\newpage
+\textit{(d)} True.
+
+\begin{proof}
+    We can prove this by contradiction.
+
+    The negation of the given statement is:
+    \[
+        \exists p \in \Q \text{ and } 2q \notin \Q \text{ s.t. } pq \in \Q
+    \]
+
+    Assuming this is true, we can assume $pq \in \Q$, which implies $2q \cdot p \in \Q$.
+    
+    Let $p = \tfrac{a}{b}$ where $a,b \in \Z \text{ and } b \neq 0$, and $x \in \Q$. Thus:
+    \begin{align*}
+        \frac{a}{b} \cdot 2q & = x\\
+        \frac{b}{a} \cdot \frac{a}{b} \cdot 2q & = x \cdot \frac{b}{a}\\
+        & = 2q\\
+        \text{Since } x \cdot \frac{b}{a} \in \Q,2q \in \Q
+    \end{align*}
+
+    Which contradicts the initial statement, where $2q \notin \Q$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass[12pt, letterpaper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\begin{document}
+\textbf{(Q4)}
+
+The contrapositive of a conditional statement $A \Rightarrow B$ is $\neg B \Rightarrow \neg A$.
+
+This is because $A \Rightarrow B$ does not go both ways:
+
+\[
+    A \Rightarrow B \neq B \Rightarrow A
+\]
+Intuitively speaking, $A \Rightarrow B$ means that "If $A$ is true, then $B$ must be true." This does
+not necessarily imply that "If $B$ is true, then $A$ must be true", as $B$ being true does not
+necessarily mean that $A$ is true.
+
+In order to achieve the logical equivalent of $A \Rightarrow B$, we need to negate both the
+condition and outcome in $B \Rightarrow A$:
+\[
+    A \Rightarrow B = \neg B \Rightarrow \neg A
+\]
+This clearly makes more sense, as from the earlier intuitive definition, if $B$ is false then
+we know that $A$ is false.
+
+To apply this to the given statement:
+\begin{quote}
+    If it's raining, then it's cloudy.
+\end{quote}
+
+The logical equivalent of this statement is not "If it's cloudy, then it's raining".
+We know this intuitively: Just because it's cloudy, it doesn't mean there
+is rain. In order to achieve logical equivalency, we need to negate both sides:
+\begin{quote}
+    If it's not cloudy, then it's not raining.
+\end{quote}
+Which is the given contrapositive of the given statement.
+
+
+\end{document}

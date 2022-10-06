@@ -1,0 +1,47 @@
+\documentclass[12pt, letterpaper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+% convenience definitions for set intervals.
+\newcommand{\open}[1]{\left(#1\right)}
+\newcommand{\closed}[1]{\left[#1\right]}
+\newcommand{\openclosed}[1]{\left(#1\right]}
+\newcommand{\closedopen}[1]{\left[#1\right)}
+
+\begin{document}
+\textbf{(Q8)}
+
+\textit{(a)}
+
+Let $S = \open{-\infty,0} \cup \{x \ \in \Z : 1 \leq x \leq 8\}$.
+
+Let $T = \open{9, \infty} \cup \{x \in \Z : 1 \leq x \leq 8\}$.
+
+In $S \cap T$, the open intervals get removed, leaving $\{x \in \Z : 1 \leq x \leq 8\}$,
+which is equivalent to $\{1,2,3,4,5,6,7,8\}$ which has exactly 8 elements.
+
+\textit{(b)}
+
+Let $S = \{0\}$.
+\begin{align*}
+    S \cap \Z & = \{0\}\\
+    S \cap \N & = \phi\\
+    S \cap \Z & \neq S \cap \N
+\end{align*}
+
+\textit{(c)}
+
+Let $S = \open{a, \mid b - a \mid}$.
+Let $T = \open{b, \mid b - a \mid}$.
+
+$S \cup T = \open{a, b}$ where $a < b$.
+\end{document}

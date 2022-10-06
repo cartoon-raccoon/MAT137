@@ -1,0 +1,40 @@
+\documentclass[12pt, letterpaper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\begin{document}
+    \textbf{(Q3)}
+
+    We begin with a few definitions:
+
+    \begin{itemize}
+        \item Let $s$ be a fixed student taking MAT137.
+        \item Let $M$ be the set of MAT137 students.
+        \item Let $F$ be the set of friends of $s$.
+        \item Let $N_{F}$ be a set of friends of $s$ with first name starting with P.
+        \item Let $N_{L}$ be a set of friends of $s$ with last name starting with P.
+    \end{itemize}
+
+    Thus, the statement
+    \begin{quote}
+        There is a student taking MAT137 at UTM who has no friends whose first
+        name and last name begin with the letter P.
+    \end{quote}
+
+    This can be expressed as:
+
+    \[
+        \exists s \in M \text{ s.t. } \forall p \in F, p \notin N_{F} \text{ and } p \notin N_{L}
+    \]
+    This negates to:
+    \[
+        \forall s \in M, \exists p \in F \text{ s.t. } p \in N_{F} \text{ or } p \in N_{L}
+    \]
+    Which can be expressed in plain English as:
+
+    \begin{quote}
+        All students taking MAT137 at UTM have at least one friend whose first or last name begins with P.
+    \end{quote}
+\end{document}

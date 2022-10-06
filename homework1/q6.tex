@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q6)}
+\begin{theorem}
+    Prove the following statement is true, by proving its contrapositive is true.
+    \begin{quote}
+        "If $x+y \notin \Q$, then $x \notin \Q$ or $y \notin \Q$."
+    \end{quote}
+\end{theorem}
+
+\begin{proof}
+    The given statement can be expressed mathematically as:
+    \[
+        x + y \notin \Q \Rightarrow x \notin \Q \text{ or } y \notin \Q
+    \]
+    The contrapositive of which is:
+    \[
+        x \in \Q \text{ and } y \in \Q \Rightarrow x + y \in \Q
+    \]
+    By the definition of rational numbers, we can assign values to $x$ and $y$ as such:
+    \begin{quote}
+        Let $x = \tfrac{a}{b}, y = \tfrac{c}{d}$, where $a,b,c,d \in \Z$ and $b,d \neq 0$.
+    \end{quote}
+    Therefore,
+    \begin{align*}
+        x + y & = \frac{ad}{bd} + \frac{bc}{bd}\\
+        & = \frac{ad + bc}{bd}
+    \end{align*}
+    This holds because $b,d \neq 0$, thus $bd \neq 0$.
+
+    We assume that the set of integers is closed under addition and multiplication,
+    thus $ad$, $bc$, and $ad + bc \in \Z$.
+
+    Therefore,$\tfrac{ad + bc}{bd}$ is a rational number, which means the contrapositive is true,
+    and thus the original statement.
+\end{proof}
+\end{document}

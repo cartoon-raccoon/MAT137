@@ -1,0 +1,68 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% convenience definitions for real numbers and integers.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% convenience definitions for set intervals.
+\newcommand{\open}[1]{\left(#1\right)}
+\newcommand{\closed}[1]{\left[#1\right]}
+\newcommand{\openclosed}[1]{\left(#1\right]}
+\newcommand{\closedopen}[1]{\left[#1\right)}
+
+% let's begin
+\begin{document}
+\begin{flushleft}
+
+\textbf{Q1}
+
+Given $X$, $Y$ as follows:
+
+\[ 
+    X = \closed{7, 4}, Y = \open{\tfrac{-14}{8},8}
+\]
+These are the answers:
+
+(a) $X \cup Y = \openclosed{-7, 8}$
+
+(b) $Y \cap X = \openclosed{-\frac{14}{5}, 4}$
+
+(c) 
+\begin{align*}
+    Y^{c} & = \openclosed{-\infty, -\tfrac{14}{5}} \cup \closedopen{8, \infty}\\
+    X & = \closed{-7, 4}\\
+    Y^{c} \cup X & = \closed{-7,-\tfrac{14}{5}} \cup \closed{4,8}
+\end{align*}
+
+(d)
+\begin{align*}
+    X^{c} & = \open{-\infty,-7} \cup \open{4,\infty}\\
+    Y & = \open{-\tfrac{14}{5},8}\\
+    X^{c} \cup Y & = \openclosed{-\infty,-\tfrac{14}{5}} \cup \closedopen{4,\infty}\\
+\end{align*}
+
+(e) $Y \setminus X = \open{4,8}$
+
+(f)
+\begin{align*}
+    X^{c} & = \open{-\infty,7} \cup \open{4,\infty}\\
+    Y \cap X^{c} & = \open{-\tfrac{14}{5},8}\\
+    \left(Y \cap X^{c}\right) \cap \Z & = \{-2,-1,0,1,2,3,4,5,6,7\}
+\end{align*}
+
+(g)
+\begin{align*}
+    \Z^{c} & = \{ x \in \R : x \notin \Z \} = \R \setminus \Z\\
+    \open{Y \cap X} \cup \Z^{c} & = 
+        \open{4,5} \cup 
+        \open{5,6} \cup 
+        \open{6,7} \cup
+        \open{7,8}
+\end{align*}
+
+\end{flushleft}
+\end{document}

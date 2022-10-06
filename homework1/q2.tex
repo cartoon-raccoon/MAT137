@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q2)}
+\begin{theorem}
+    Let $A,B$ be sets. Prove that if $(A \cap B)^{c} = A^{c}$ then $A \setminus B = \phi$.
+\end{theorem}
+
+\begin{proof}
+    We can prove this by contradiction.
+
+    We know that $A \setminus B = \phi$ iff $A \setminus B \subseteq \phi$ and $\phi \subseteq A \setminus B$. 
+    
+    Since $\phi \subseteq A \setminus B$ by its own definition, we only need
+    to prove that $A \setminus B \subseteq \phi$.
+
+    For the sake of contradiction, we assume that $A \setminus B \nsubseteq \phi$. 
+    This results in the implication:
+    \begin{equation}
+        \exists x \:\text{s.t.}\: x \in A \text{ and } x \notin B
+    \end{equation}
+
+    This implies $x \notin A^{c}$. Assuming $(A \cap B)^{c} = A^{c}$ as given, we can rewrite this as:
+    \[
+        x \notin \left(A \cap B\right)^{c} \implies x \in \left(A \cap B\right)
+    \]
+    Which implies that $x \in A$ and $x \in B$. However, this is not possible as it contradicts
+    the earlier statement $x \in A \text{ and } x \notin B$.
+
+    Therefore, $A \setminus B \subseteq \phi$, which combined with $\phi \subseteq A \setminus B$,
+    allows us to conclude that $A \setminus B = \phi$.
+
+\end{proof}
+\end{document}
