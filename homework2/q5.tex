@@ -1,0 +1,96 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+%\renewcommand{\implies}{\Rightarrow}
+\newcommand{\R}{\mathbb{R}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+\textbf{(Q5)}
+
+\textit{(a)}
+The negation of the definition of limit is:
+\[
+    \exists \epsilon > 0 \text{ s.t. } \forall \delta > 0, \exists x \in \R
+    \text{ s.t. } 0 < |x - a| < \delta \text{ and } |f(x) - L| \geq \epsilon
+\]
+
+\textit{(b)}
+\begin{gather*}
+    \displim{x \to a} f(x) \text{ DNE iff}\\
+    \forall L \in \R, \exists \epsilon > 0 \text{ s.t. }\forall \delta > 0, \exists
+    x \in \R \text{ s.t. }\\
+    0 < |x - a| < d \text{ and } |f(x) - L| \geq \epsilon
+\end{gather*}
+
+\textit{(c)}
+\begin{proof}
+    Formally speaking, the implication we are looking to prove is:
+    \begin{gather*}
+        \forall L \in \R\: \exists \epsilon_1 \st \forall \delta >0, \exists
+        x \in \R \st 0 < |x - a| < \delta \text{ and } |f(x) - L| \geq \epsilon_1\\
+        \iff\\
+        \forall L \in \R\: \exists \epsilon \st \forall \delta >0, \exists
+        x \in \R \st 0 < |x - a| < \delta \text{ and } |cf(x) - cL| \geq \epsilon\\
+    \end{gather*}
+
+    Assuming the first implication, we can assume theat there exists a $\epsilon_1$
+    that satisfies $|f(x) - L \geq \epsilon_1$. We need to find an $\epsilon$ that
+    satisfies $|cf(x) -cL \geq \epsilon$.
+
+    Fix $\delta > 0$. Let $\epsilon = \frac{\epsilon_1}{c}$.
+
+    We observe that $|cf(x) - cL| = c|f(x)- L|$.
+
+    Then,
+    \begin{gather*}
+        c|f(x)- L| \geq \frac{\epsilon_1}{c} \implies |f(x) -L| \geq \epsilon_1
+    \end{gather*}
+
+    Now, assuming the second implication, we observe that 
+    $\displaystyle{\frac{\epsilon}{c}} < \epsilon_1$. Thus,
+    \[
+        |f(x) - L| \geq \epsilon_1 > \frac{\epsilon}{c}
+    \]
+\end{proof}
+
+\textit{(d)}
+\begin{proof}
+    By contrapositive of the given implication:
+
+    \begin{quote}
+        $\displim{x \to a}\: cf(x)$ exists iff $\displim{x \to a}\: f(x)$ exists
+    \end{quote}
+
+    Considering one way of the implication, if $\displim{x \to a}\: f(x)$ exists
+    and $\displim{x \to a}\: c$ exists, by limit laws we can calculate
+    $\displim{x \to a}\: cf(x)$ which also exists.
+
+    Considering the other direction of the implication, if $\displim{x \to a}\: cf(x)$
+    exists and $\displim{x \to a}\: c$ exists and is non-zero, then we can perform
+    the following division:
+    \[
+        \frac{\displim{x \to a}\: cf(x)}{\displim{x \to a}\: c}
+    \]
+    Which would yield $\displim{x \to a}\: f(x)$.
+\end{proof}
+
+\textit{(e)}
+Consider the function $\displaystyle{\frac{1}{x}}$.
+
+$\displim{x \to o}\: \frac{1}{x} \text{ DNE}$, but 
+$\displim{x \to 0}\: 0 \cdot \frac{1}{x} = 0$
+\end{document}

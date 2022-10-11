@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q2)}
+\begin{theorem}
+    Prove that if $|2x + 2| < 4$, then $|x^3 + 1| < 26$.
+\end{theorem}
+
+\begin{proof}
+    We can factorize the inequality as follows:
+
+    \begin{align*}
+        |2x + 2| < 4 \implies 2|x + 1| < 4 \implies |x + 1| < 2
+    \end{align*}
+    
+    Thus, it follows that:
+    \begin{align*}
+        |x + 1| < 2
+        & \implies -2 < x + 1 < 2\\
+        & \implies -3 < x  < 1\\
+        & \implies -27 < x^3 < 1\\
+        & \implies -26 < x^2 + 1 < 2\\
+        & \implies |x^3 + 1| < 26
+    \end{align*}
+\end{proof}
+
+\end{document}

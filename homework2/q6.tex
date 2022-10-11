@@ -1,0 +1,45 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q6)}
+\begin{theorem}
+    Prove that if $\displim{x \to 0} x^2f(x) = 2022$, then
+    $\displim{x \to 0} f(x)$ does not exist.
+\end{theorem}
+
+\begin{proof}
+    We assume that $\zerolim x^2 = 0$.
+
+    For the sake of contradiction, assume that $\displim{x \to 0} f(x)$ exists. Since both
+    functions have limits that exist, we can make use of Limit Laws.
+
+    By the Limit Law of Products, $\zerolim x^2f(x) = \zerolim x^2 \cdot \zerolim f(x)$.
+    Thus,
+    \[
+        \zerolim x^2f(x) = 0 \cdot \zerolim f(x) = 0
+    \]
+    Which is not possible as $\zerolim x^2f(x) = 2022$. Thus, $\zerolim f(x)$ does not
+    exist.
+\end{proof}
+
+\end{document}

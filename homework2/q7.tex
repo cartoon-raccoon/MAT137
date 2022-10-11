@@ -1,0 +1,91 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q7)}
+
+\textit{(a)} False.
+
+Consider the piecewise function
+
+\[
+    f(x) = \begin{cases}
+        \frac{\sin x}{x} + 2021 & \text{if } x \neq 0\\
+        69 & \text{if } x = 0
+    \end{cases}
+\]
+
+This function fulfills the following:
+
+\begin{itemize}
+    \item It is defined for all $x \in \R$.
+    \item It is bounded within $(2021, 2022)$ for all $x \neq 0$, and $(0, 2022)$ for $x = 0$,
+    which means the entire function is bounded within $(0, 2022)$.
+    \item $\zerolim f(x) = 2022$.
+\end{itemize}
+
+As such, it is possible to have $0 < f(x) < 2022$ with a limit $L \geq 2022$.
+
+\textit{(b)} False.
+
+We cannot draw conclusions given only the limit of the product of
+two functions, as we cannot guarantee that there exists a limit for either function.
+
+As a counter-example, consider $f(x) = x, \: g(x) = \displaystyle{\frac{1}{x}}$. It follows:
+\[
+    \begin{gathered}
+        \zerolim \: x \cdot \frac{1}{x} = 1\\
+        \zerolim \: x = 0\\
+        \zerolim \: \frac{1}{x} \text{ DNE}
+    \end{gathered}
+\]
+
+Therefore, $\displim{x \to a} \: f(x) = \displaystyle{\frac{1}{\displim{x \to a} \: g(x)}}$
+is not true for some functions.
+
+\textit{(c)} True.
+
+\begin{proof}
+    We are given that
+    \[
+        \forall \epsilon \in (0, \tfrac{1}{100}),\: \exists \: \delta_1 > 0 \text{ s.t. }
+        \forall x \in \R,\: 0 < |x - 137| < \delta_1 \implies |f(x) - 2022| < \epsilon
+    \]
+
+    Thus we can assume that for $\epsilon < \tfrac{1}{100}$, there is a $\delta_1$ for that
+    $\epsilon$ that satisfies this particular implication. We want to show that:
+
+    \[
+        \forall \epsilon > 0,\: \exists \: \delta > 0 \text{ s.t. }
+        \forall x \in \R,\: 0 < |x - 137| < \delta \implies |f(x) - 2022| < \epsilon
+    \]
+
+    Fix $\epsilon \geq \tfrac{1}{100}$. Let $\delta = \delta_1$. It follows that:
+
+    \begin{gather*}
+        0 < |x - 137| < \delta_1 = \delta \\
+        \implies 0 < |x - 137| < \delta \implies |f(x) - 2022| < \tfrac{1}{100} \leq \epsilon\\
+        \implies 0 < |x - 137| < \delta \implies |f(x) - 2022| < \epsilon
+    \end{gather*}
+\end{proof}
+
+\end{document}

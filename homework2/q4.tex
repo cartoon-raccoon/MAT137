@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q4)}
+\begin{theorem}
+    Prove that $\displaystyle{\lim_{x \to 3} \frac{x^2 - 9}{x - 3}} = 6$ using the $\delta-\epsilon$ definition of the limit.
+\end{theorem}
+
+\begin{proof}
+    We observe that 
+    \[
+        \frac{x^2 - 9}{x - 3} = \frac{(x + 3)(x - 3)}{(x - 3)} = x + 3
+    \]
+    Since we are working with limits, we can remove common factors with impunity as we do not
+    risk dividing by 0.
+
+    The $\delta-\epsilon$ definition of the limit for this function is
+    \[
+        \forall \epsilon > 0, \exists \delta > 0 \text { s.t. } \forall x \in \R, \:
+        0 < |x - 3| < \delta \implies |(x + 3) - 6| < \epsilon
+    \]
+
+    We can simplify the right hand side of this implication to $|x - 3| < \epsilon$.
+
+    Let $\delta = \epsilon$. It follows that:
+
+    \begin{align*}
+        0 < |x - 3| < \delta \implies 0 < |x - 3| < \epsilon \implies |x - 3| < \epsilon
+    \end{align*}
+\end{proof}
+
+\end{document}

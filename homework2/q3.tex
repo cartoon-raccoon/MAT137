@@ -1,0 +1,64 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q3)}
+\begin{theorem}
+    Prove that $\displaystyle{\lim_{x \to -1}} x^3 = -1$ using the $\delta-\epsilon$ definition of the limit.
+\end{theorem}
+
+\begin{proof}
+    The $\delta-\epsilon$ definition of the limit, as applied to this function, is
+
+    \[
+        \forall \epsilon > 0, \exists \delta > 0 \text{ s.t. } \forall x \in \R,\:
+        0 < |x + 1| < \delta \implies |x^3 + 1| < \epsilon
+    \]
+
+    Fix $\epsilon > 0$. Thus,
+
+    By the sum of cubes,
+
+    \begin{align*}
+        |x^3 + 1| & = |x + 1||x^2 - x + 1| < \epsilon\\
+        & \implies \delta|x^2 - x + 1| < \epsilon
+    \end{align*}
+
+    Let $\delta = min\{1, \frac{\epsilon}{3}\}$.
+
+    Assuming $0 < |x + 1| < \delta$, $|x + 1| < \frac{\epsilon}{3}$ and $|x + 1| < 1$.
+
+    Considering $\delta \leq 1$ implies:
+
+    \begin{align*}
+        0 & < |x + 1| < 1\\
+        \implies -1 & < x + 1 < 1\\
+        \implies -2 & < x < 0\\
+        \implies |x| & < 2
+    \end{align*}
+
+    Since $\delta \leq \frac{\epsilon}{3}$, it follows that:
+    \begin{align*}
+        |x^2 - x + 1| < 3
+        & \implies \delta|x^2 - x + 1| < 3\delta \leq \epsilon\\
+        & \implies |x^3 + 1| < \epsilon
+    \end{align*}
+\end{proof}
+
+\end{document}
