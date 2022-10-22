@@ -36,7 +36,13 @@
         \sin^2x \leq f(x) \leq x^2
     \]
 
-    Taking $\zerolim \sin x = 0$, we can use limit laws to compute $\zerolim \sin^2x$:
+    Using the fact that $\sin x$ is continuous, we can calculate $\displim{x \to 0} \sin x$
+    by evaluating it as follows:
+    \[
+        \displim{x \to 0} \sin x = \sin 0 = 0
+    \]
+    
+    From which we can use limit laws to compute $\zerolim \sin^2x$:
 
     \[
         \zerolim \sin x = 0 \implies \zerolim (\sin x)(\sin x) = 0 \cdot 0 = 0
@@ -51,7 +57,9 @@
     By Squeeze Theorem,
 
     \begin{gather*}
-        \forall x \in (-2022, 2022),\: \sin^2x \leq f(x) \leq x^2 \text{ and } \zerolim \sin^2x = \zerolim x^2 = 0\\
+        \forall x \in (-2022, 2022),\: \sin^2x \leq f(x) \leq x^2\\
+        \text{ and }\\
+        \zerolim \sin^2x = \zerolim x^2 = 0\\
         \implies \zerolim f(x) = 0
     \end{gather*}
 
