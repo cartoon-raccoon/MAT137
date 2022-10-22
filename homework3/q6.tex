@@ -1,0 +1,63 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}\:}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+\textbf{(Q6)}
+
+First, we manipulate the polynomial into something that is easier to work with.
+
+Multiplying the polynomial by its conjugate:
+
+\begin{align*}
+    \sqrt{x^6 - x^3} + x^3 & =
+    \frac{\sqrt{x^6 - x^3} + x^3}{1} \cdot
+    \frac{\sqrt{x^6 - x^3} - x^3}{\sqrt{x^6 - x^3} - x^3}\\
+    & = \frac{x^6 - x^3 - x^6}{\sqrt{x^6 - x^3} - x^3}\\
+    & = \frac{- x^3}{\sqrt{x^6}\sqrt{1 - \frac{1}{x^3}} - x^3}
+\end{align*}
+
+Since we are considering limits at negative infinity,
+\[
+    \sqrt{x^6} = \left|x^3\right| = -x^3 \text{ for $x < 0$}
+\]
+
+It follows that:
+
+\begin{align*}
+    \frac{- x^3}{-x^3\sqrt{1 - \frac{1}{x^3}} - x^3} & =
+    \frac{1}{\sqrt{1 - \frac{1}{x^3}} + 1}
+\end{align*}
+
+From which we can calculate the limit.
+
+Since $\displim{x \to -\infty} \frac{1}{x^k} = 0$ for $k > 0$,
+\[
+    \displim{x \to -\infty} \sqrt{1 - 0} = \sqrt{\displim{x \to -\infty} 1} = 1
+\]
+
+From which it follows:
+
+\begin{align*}
+    \displim{x \to -\infty} \frac{1}{\sqrt{1 - \frac{1}{x^3}} + 1} & =
+    \displim{x \to -\infty} \frac{1}{\sqrt{1 - 0} + 1}\\
+    & = \displim{x \to -\infty} \frac{1}{1 + 1}\\
+    & = \frac{1}{2}
+\end{align*}
+
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}\:}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+\textbf{(Q5)}
+
+\textit{(a)}
+
+\[
+    \forall \epsilon > 0,\: \exists M \in \R \st \forall x \in \R,\: x < M \implies |f(x) - L| < \epsilon
+\]
+
+\textit{(b)}
+
+\begin{proof}
+    Formally, the implication we are trying to prove is:
+
+    \[
+        \forall \epsilon > 0,\: \exists M \in \R \st \forall x \in \R,\: x < M \implies |e^x| < \epsilon
+    \]
+
+    Fix $\epsilon$ as arbitrary. Let $M = \ln \epsilon$. It follows:
+
+    \begin{align*}
+        x < \ln \epsilon & \implies e^x < e^{\ln \epsilon} \text{ (since $a < b \implies e^a < e^b$)}\\
+        & \implies e^x < \epsilon\\
+        & \implies |e^x| < \epsilon \text{ (since $e^x > 0$ for all $x \in \R$)}
+    \end{align*}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}\:}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+\textbf{(Q4)}
+
+\begin{theorem}
+    Let $f \colon \R \to \R$ be a function so that
+    \[
+        (1 - \cos^2x) \leq f(x) \leq x^2
+    \]
+    for all $x \in (-2022, 2022)$.
+
+    Prove that $\zerolim f(x)$ exists.
+\end{theorem}
+
+\begin{proof}
+    We observe that $1 - \cos^2x = \sin^2x$. We can thus rewrite the definition of
+    $f(x)$ as:
+
+    \[
+        \sin^2x \leq f(x) \leq x^2
+    \]
+
+    Taking $\zerolim \sin x = 0$, we can use limit laws to compute $\zerolim \sin^2x$:
+
+    \[
+        \zerolim \sin x = 0 \implies \zerolim (\sin x)(\sin x) = 0 \cdot 0 = 0
+    \]
+
+    Using the fact that $x^2$ is continuous, we can also compute its limit at $x = 0$:
+
+    \[
+        \zerolim x^2 = 0^2 = 0
+    \]
+
+    By Squeeze Theorem,
+
+    \begin{gather*}
+        \forall x \in (-2022, 2022),\: \sin^2x \leq f(x) \leq x^2 \text{ and } \zerolim \sin^2x = \zerolim x^2 = 0\\
+        \implies \zerolim f(x) = 0
+    \end{gather*}
+
+    Which also proves that $\zerolim f(x)$ exists, as required.
+\end{proof}
+
+\end{document}

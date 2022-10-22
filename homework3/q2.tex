@@ -1,0 +1,98 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+
+% let's begin
+\begin{document}
+\textbf{(Q2)}
+
+By limit laws, we know that:
+
+\[
+    \displim{x \to a}\: f(x) = L \text{ and }
+    \displim{x \to a}\: g(x) = M \implies
+    \displim{x \to a}\: f(x) + g(x) = L + M
+\]
+\[
+    \displim{x \to a}\: f(x) = L \text{ and }
+    \displim{x \to a}\: g(x) = M \implies
+    \displim{x \to a}\: f(x) \cdot g(x) = L \cdot M
+\]
+
+Since $\displim{x \to \infty}\: \tfrac{1}{x} = 0$, we can safely remove any
+operation involving adding a rational term.
+
+\textit{(a)}
+
+First, some manipulations are in order:
+
+\begin{align*}
+    \frac{
+        2x^2 - 16x + 1
+    }{
+        x^3 + 137x + 2022
+    } & = 
+    \frac{
+        x^2(2 - \frac{16}{x} + \frac{1}{x^2})
+    }{
+        x^2(x + \frac{137}{x} + \frac{2022}{x^2})
+    }\\ & = 
+    \frac{
+        2 - \frac{16}{x} + \frac{1}{x^2}
+    }{
+        x + \frac{137}{x} + \frac{2022}{x^2}
+    }
+\end{align*}
+
+Removing the rational terms we get:
+
+\[
+    \displim{x \to \infty}\:\frac{2 - \frac{16}{x} + \frac{1}{x^2}}{x + \frac{137}{x} + \frac{2022}{x^2}}
+    = \displim{x \to \infty}\: \frac{2}{x}
+    = \displim{x \to \infty}\: 2 \cdot \displim{x \to \infty}\: \frac{1}{x}
+\]
+
+By the limit laws,
+
+\[
+    \displim{x \to \infty}\: 2 \cdot \displim{x \to \infty}\: \frac{1}{x} = 2 \cdot 0 = 0
+\]
+
+\textit{(b)}
+
+Similar manipulations are in order:
+
+\begin{align*}
+    \frac{
+        137x^5 - 10000x + 12
+    }{
+        2022x^5 + 20x^4 - x + 1
+    } & =
+    \frac{
+        x^5(137 - \frac{100000}{x^4} + \frac{12}{x^5})
+    }{
+        x^5(2022 + \frac{20}{x} - \frac{1}{x^4} + \frac{1}{x^5})
+    }\\ & =
+    \frac{
+        137 - \frac{100000}{x^4} + \frac{12}{x^5}
+    }{
+        2022 + \frac{20}{x} - \frac{1}{x^4} + \frac{1}{x^5}
+    }
+\end{align*}
+
+Removing the rational terms:
+
+\[
+    \displim{x \to \infty}\: \frac{
+        137 - \frac{100000}{x^4} + \frac{12}{x^5}
+    }{
+        2022 + \frac{20}{x} - \frac{1}{x^4} + \frac{1}{x^5}
+    } = \frac{137}{2022}
+\]
+
+
+\end{document}

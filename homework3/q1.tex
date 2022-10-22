@@ -1,0 +1,104 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+% let's begin
+\begin{document}
+\textbf{(Q1)}
+
+\textit{(a)}
+
+\begin{proof}
+    Based on the definition of limits at infinity, the implication we are trying to prove is:
+
+    \[
+        \forall \epsilon > 0,\: \exists M \in \R \st x > M \implies \left|\frac{1}{x}\right| < \epsilon
+    \]
+
+    Fix $\epsilon > 0$. Let $M = \tfrac{1}{\epsilon}$. If $x > M$, then $x > \tfrac{1}{\epsilon} > 0$.
+    Assuming $x > M$, it follows:
+    
+    \begin{align*}
+        x > M & \implies x > \frac{1}{\epsilon}\\
+        & \implies \epsilon x > 1\\
+        & \implies \frac{1}{x} < \epsilon\\
+        & \implies \left|\frac{1}{x}\right| < \epsilon \quad \text{(since $\tfrac{1}{x} > 0$)}
+    \end{align*}
+\end{proof}
+
+\textit{(b)}
+
+\begin{proof} 
+    In order to prove that $\tfrac{1}{x^k} < \tfrac{1}{x}$ for all integers $x > 1$ and $k \geq 2$,
+    we first have to prove that $x < x^k$ for all $k \geq 2$. This can be done with a proof by induction.
+    
+    \textbf{Base Case.} The base case we have to prove is $x^2 > x$. Since $x > 1$, it follows:
+
+    \[
+        x > 1 \implies x^2 > x
+    \]
+
+    \textbf{Induction Step.} Following this, we need to prove for any natural $k \geq 2$:
+    \[
+        x^k > x \implies x^{k + 1} > x
+    \]
+
+    We observe that $x^{k+1} = x^k \cdot x$. Thus, since $x > 1$:
+    
+    \begin{align*}
+        x^k \cdot x > x^k > x & \implies x^k \cdot x > x\\
+        & \implies x^{k + 1} > x
+    \end{align*}
+
+    Thus, we prove that $x < x^k$ for all $k \geq 2$ and in turn $\tfrac{1}{x^k} < \tfrac{1}{x}$.
+    
+    Since $x > 0, k > 0, x^k > 0 \implies \tfrac{1}{x^k} > 0$. Therefore,
+
+    \[
+        0 < \frac{1}{x^k} < \frac{1}{x} \text{ for all integers $x > 1, k \geq 2$}
+    \]
+
+\end{proof}
+
+\newpage
+
+\textit{(c)}
+
+\begin{proof}
+    We know from the Squeeze Theorem that for any three functions $f, g, h$:
+
+    If:
+    \begin{itemize}
+        \item For $x$ close to any point $a$ but not $a$, $h(x) \leq g(x) \leq f(x)$;
+        \item $\displim{x \to a} f(x) = \displim{x \to a} h(x) = L$;
+    \end{itemize}
+
+    then $\displim{x \to a} g(x) = L$.
+
+    Let $h(x) = 0, g(x) = \tfrac{1}{x^k}, f(x) = \tfrac{1}{x}$.
+
+    By \textit{(b)} we know that
+    \[
+        0 < \frac{1}{x^k} < \frac{1}{x} \text{ for all integers $x > 1, k \geq 2$}
+    \]
+    Therefore by the Squeeze Theorem,
+    \[
+        \displim{x \to \infty} f(x) = \displim{x \to \infty} h(x) = 0 \implies
+        \displim{x \to \infty} g(x) = 0
+    \]
+
+\end{proof}
+
+\end{document}

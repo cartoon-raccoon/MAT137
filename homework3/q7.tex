@@ -1,0 +1,82 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{centernot}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}\:}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+\textbf{(Q7)}
+
+\textit{(a)}
+True.
+
+\begin{proof}
+    Formally speaking, what we are trying to prove is that:
+
+    \begin{gather*}
+        \forall \epsilon > 0,\: \exists \delta_1 > 0 \st \forall x \in \R,\\
+        0 < |x - a| < \delta_1 \implies |f(x)| < \epsilon \quad (1)\\
+        \text{if and only if}\\
+        \forall \epsilon > 0,\: \exists \delta_2 > 0 \st \forall x \in \R,\\
+        0 < |x - a| < \delta_2 \implies \left||f(x)|\right| < \epsilon \quad (2)
+    \end{gather*}
+
+    In order to prove that $(1) \iff (2)$, we have to prove that $(1) \implies (2)$
+    and $(2) \implies (1)$.
+
+    Assuming $(1)$, let $\epsilon$ be arbitrary and fix $\delta_2 = \delta_1$.
+    We observe that $\left||f(x)|\right| = |f(x)|$. Thus,
+    \[
+        0 < |x - a| < \delta_1 \implies |f(x)| = \left||f(x)|\right|
+    \]
+
+    Which proves $(1) \implies (2)$.
+
+    Assuming $(2)$, let $\epsilon$ be arbitrary and fix $\delta_1 = \delta_2$.
+    Using the same observation,
+
+    \[
+        0 < |x - a| < \delta_2 \implies \left||f(x)|\right| = |f(x)|
+    \]
+
+    Which proves $(2) \implies (1)$.
+
+    Since we have proven that $(1) \implies (2)$ and $(2) \implies (1)$, we can
+    conclude that $(1) \iff (2)$, as required.
+
+\end{proof}
+
+\textit{(b)}
+False.
+
+As a counterexample, consider the function:
+
+\[
+    f(x) = \begin{cases}
+        1 \text{ if $x < a$}\\
+        -1 \text{ if $x > a$}
+    \end{cases}
+\]
+
+$f(x)$ has no limit at $a$, while $|f(x)|$ does. In other words,
+
+\[
+    \displim{x \to a} |f(x)| = 1 \centernot\implies \displim{x \to a} f(x) = 1
+\]
+
+
+\end{document}
