@@ -1,0 +1,34 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\dispst}{\displaystyle}
+
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\begin{document}
+
+\textbf{(Q6)}
+
+\begin{proof}
+    We aim to prove the implication:
+    \[
+        f(-x) = f(x) \implies f'(-x) = -f'(x)
+    \]
+
+    Assuming that $f$ is even (i.e. $f(x) = f(-x)$), it then follows:
+    \begin{align*}
+        \ddx f(x) = \ddx f(-x) & \implies f'(x) = -1 \cdot f'(-x) \text{ (by Chain Rule)}\\
+        & \implies f'(x) = -f'(-x)\\
+        & \implies -f'(x) = f'(-x)
+    \end{align*}
+
+    By the given definition of a odd function, we have proven that if $f$ is even,
+    then $f'$ is odd, as required.
+\end{proof}
+\end{document}

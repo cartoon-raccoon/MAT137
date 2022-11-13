@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+\newcommand{\dispst}{\displaystyle}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q4)} 
+
+Given the curve $\sin (2x - y) + x^3y^2 + 1 = e^{y - x^2}$, we are required to find
+the equation of the tangent line at $(0,0)$.
+
+We can find the derivative by means of implicit differentiation:
+
+\begin{gather*}
+    \ddx \sin (2x - y) + x^3y^2 + 1 - e^{y - x^2}\\
+    = (\cos(2x-y) \cdot 2 - y') + (3x^2y^2 + x^3(2y \cdot y')) - (e^{y-x^2} \cdot (y' - 2x))
+\end{gather*}
+
+Considering the curve at (0, 0):
+
+\begin{gather*}
+    (\cos(0) \cdot 2 - y') + (3(0)^2(0)^2 + 0^3(0 \cdot y')) - (e^{0-0^2} \cdot (y' - 0))\\
+    = 2 - y' - y' = 0 \implies y' = 1
+\end{gather*}
+
+Therefore, the slope of the tangent is 1. Substituting the point (0,0) and slope into the 
+form $y = mx + b$:
+\begin{align*}
+    0 = 1(0) + b & \implies b = 0\\
+    & \implies y = x
+\end{align*}
+
+Which is the equation of the tangent line.
+
+\end{document}

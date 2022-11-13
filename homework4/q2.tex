@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+\newcommand{\dispst}{\displaystyle}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q2)}
+
+\textit{(a)} $(f \circ g) = (\sin x)^3$
+
+By the Chain Rule,
+\[
+    \ddx (\sin x)^3 = 3(\sin x)^2 \cdot \cos x
+\]
+
+\textit{(b)} $\dispst\left(\frac{f}{g}\right) = \dispst\frac{x^3}{\sin x}$.
+
+By the Quotient Rule,
+\begin{align*}
+    \ddx \left(\frac{x^3}{\sin x}\right) & = \frac{3x^2 \sin x - x^3 \cos x}{\sin^2 x}\\
+    & = \frac{3x^2 \sin x}{\sin^2x} - \frac{x^3 \cos x}{\sin x}\\
+    & = \frac{3x^2}{\sin x} - \left(\frac{x^3}{\sin x} \cdot \frac{\cos x}{\sin x}\right)\\
+    & = 3x^2 \csc x - \left(x^3 \csc x \cdot \cot x\right)\\
+    & = x^2\csc x (3 - x \cot x)
+\end{align*}
+
+\textit{(c)} $\left(2f - (h \circ g)\right) = 2x^3 - e^{\sin x}$.
+
+By the Chain Rule,
+\[
+    \ddx 2x^3 - e^{\sin x} = 6x^2 - (e^{\sin x} \cos x)
+\]
+
+\textit{(d)} We observe that $(f \circ g \circ h)'(x) = f'(g(h(x))) \cdot \ddx g(h(x))$
+via the Chain Rule. In turn, $\ddx g(h(x)) = g'(h(x)) \cdot h'(x)$. In all:
+\[
+    \ddx f(g(h(x))) = f'(g(h(x))) \cdot g'(h(x)) \cdot h'(x)
+\]\
+
+Applying this to the given functions:
+\begin{align*}
+    \ddx (e^{sin x})^3 & = 3(e^{sin x})^2 \cdot e^{sin x} \cdot \cos x\\
+    & = 3(e^{\sin x})^3 \cdot \cos x
+\end{align*}
+
+\textit{(e)} We observe, by the Product Rule:
+\begin{align*}
+    (f \cdot g \cdot h)' & = f'(gh) + f(gh)'\\
+    & = f'gh + f(g'h + gh')\\
+    & = f'gh + fg'h + fgh'
+\end{align*}
+
+Applying this to the given functions:
+\begin{align*}
+    \ddx \left(x^3 \sin x e^x\right) & = (3x^2 \cdot \sin x \cdot e^x)
+    + (x^3 \cdot \cos x \cdot e^x) + (x^3 \cdot \sin x \cdot e^x)\\
+    & = x^2 e^x\left(3\sin x + x \cdot \cos x + x \cdot \sin x\right)\\
+    & = e^x\left((3 + x)(\sin x) + x \cdot \cos x\right)
+\end{align*}
+
+\end{document}

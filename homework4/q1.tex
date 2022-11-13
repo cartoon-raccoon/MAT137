@@ -1,0 +1,79 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q1)}
+The formula is:
+
+\[
+    \displaystyle f^{(n)}(x) = \frac{3^n \cdot n!}{(5 - 3x)^{n + 1}}
+\]
+
+\begin{proof}
+    Since we are only considering $n \in \N$, we prove this through induction. To make
+    operations easier to see, we write $f(x)$ as $(5 - 3x)^{-1}$.
+
+    \textit{Base Case.}
+
+    Let $n = 1$. By application of the chain rule:
+
+    \begin{align*}
+        f^{(1)}(x) & = -1 \cdot (5 - 3x)^{-2} \cdot \ddx(5 - 3x)\\
+        & = -1 \cdot (5 - 3x)^{-2} \cdot -3\\
+        & = 3(5 - 3x)^{-2}\\
+        & = \frac{3}{(5 - 3x)^2} = \frac{3^1 \cdot 1!}{(5 - 3x)^{1 + 1}}
+    \end{align*}
+
+    Thus, the base case holds.
+
+    \textit{Induction Step.}
+
+    In this step, we aim to prove the following induction hypothesis:
+    \[
+        f^{(n)}(x) = \frac{3^n(n!)}{(5 - 3x)^{n + 1}}
+        \implies f^{(n + 1)}(x) = \frac{3^{n + 1} \cdot (n + 1)!}{(5 - 3x)^{(n + 1) + 1}}
+    \]
+
+    We begin by simplifying the right hand side of the implication and rewriting it:
+    \begin{align*}
+        f^{(n + 1)}(x) & = \frac{3^{n + 1} \cdot (n + 1)!}{(5 - 3x)^{(n + 1) + 1}}\\
+        & = \frac{3^n \cdot 3 \cdot n! \cdot (n + 1)}{(5 - 3x)^n \cdot (5 - 3x)}\\
+        & = \frac{3^n(n!)}{(5 - 3x)^{n + 1}} \cdot 3 \cdot (n + 1) \cdot (5 - 3x)^{-1}
+    \end{align*}
+
+    We observe that $f^{(n + 1)}(x)$ is simply $f^{(n)}(x)$ multiplied by
+    $\left[3 \cdot (n + 1) \cdot (5 - 3x)^{-1}\right]$. Therefore, if the derivative
+    of $f^{(n)}(x)$ has the same result, the induction hypothesis is proved.
+
+    Differentiating $f^{(n)}(x)$ via chain rule ($n$ is a constant and is not affected):
+    \begin{align*}
+        \ddx 3^n(n!)(5 - 3x)^{-(n + 1)} & = 
+        3^n(n!)(5 - 3x)^{-(n + 1) - 1} \cdot -(n + 1) \cdot -3\\
+        & = 3^n(n!)(5 - 3x)^{-(n + 1) - 1} \cdot (n + 1) \cdot 3 
+        \text{ (minus signs cancel)}\\
+        & = 3^n(n!)(5 - 3x)^{-(n + 1) } \cdot 
+        \left[(5 - 3x)^{-1} \cdot (n + 1) \cdot 3\right]
+    \end{align*}
+
+    We observe that these additional terms are the exact same ones we multiplied to $f^{(n)}(x)$ 
+    to obtain $f^{(n + 1)}(x)$, thereby proving the induction hypothesis.
+
+    Since both the base case and induction hypothesis hold, we have proven the theorem, as required.
+\end{proof}
+
+\end{document}

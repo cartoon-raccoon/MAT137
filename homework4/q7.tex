@@ -1,0 +1,73 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\dispst}{\displaystyle}
+
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q7)}
+
+\begin{theorem}
+    Suppose that $f$ is bounded on $\R$. Then for all $\epsilon > 0$ the function
+    $g(x) = |x|^{1 + \epsilon}f(x)$ is differentiable at 0.
+\end{theorem}
+
+\begin{proof}
+    We are given that $f$ is bounded. This means:
+    \[
+        \forall x \in \R, \: \exists M > 0 \st |f(x)| \leq M
+    \]
+
+    Since we aim to prove that $g(x)$ is differentiable at 0, it suffices to prove that
+    $g'(0)$ exists. By the limit definition of the derivative, we have:
+    \[
+        g'(0) = \zerolim \frac{g(x) - g(0)}{x} = \zerolim \frac{g(x)}{x} 
+        \text{ since } g(0) = 0^{1 + \epsilon} f(x) = 0
+    \]
+
+    Then,
+    \[
+        g'(0) = \zerolim \frac{|x|^{1 + \epsilon} f(x)}{x} = 
+        \zerolim \frac{|x|^{1 + \epsilon}}{x} f(x)
+    \]
+
+    Since $f$ is bounded on both positive and negative:
+    \begin{align*}
+        -M \leq f(x) \leq M & \implies 
+        -M\frac{|x|^{1 + \epsilon}}{x} \leq \frac{|x|^{1 + \epsilon}}{x} f(x) \leq
+        M\frac{|x|^{1 + \epsilon}}{x}\\
+        & \implies -M|x|^{\epsilon} \leq \frac{|x|^{1 + \epsilon}}{x} f(x) \leq
+        M|x|^{\epsilon}
+    \end{align*}
+
+    We observe by known limits that:
+    \[
+        \zerolim \:\: M|x|^{\epsilon} = 0 = \zerolim -M|x|^{\epsilon}
+    \]
+
+    Therefore by Squeeze Theorem:
+    \[
+        \zerolim \: \frac{|x|^{1 + \epsilon}}{x}f(x) = 0 = g'(0)
+    \]
+
+    Since $g'(0)$ exists, we have proven the theorem, as required.
+\end{proof}
+
+\end{document}

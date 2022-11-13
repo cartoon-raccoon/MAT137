@@ -1,0 +1,60 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\dispst}{\displaystyle}
+
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\st}{\text{ s.t. }}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q5)}
+
+\begin{theorem}
+    Prove that if $f$ is continuous at $x = a$, and $f(a) > 0$, then there exists
+    a $\delta > 0$, so that $f(x) > 0$ for all $x \in (a - \delta, a + \delta)$.
+\end{theorem}
+
+\begin{proof}
+    Formally speaking, the implication we are trying to prove is:
+    \[
+        \displim{x \to a} f(x) = f(a) \implies \exists \delta > 0 \st \forall x \in
+        x \in (a - \delta, a + \delta), \: f(x) > 0
+    \]
+
+    Assuming $f(x)$ is continuous by the limit definition of continuity (rewritten slightly):
+    \begin{gather*}
+        \forall \epsilon > 0, \: \exists \delta > 0 \st \forall x \in \R,\\
+        x \in (a - \delta, a + \delta) \implies |f(x) - f(a)| < \epsilon
+    \end{gather*}
+
+    We know that there exists a $\delta$ for every $\epsilon$ such that the above implication
+    holds. Therefore, all we need to do is to choose an $\epsilon$ such that $\epsilon < f(a)$,
+
+    Let $\epsilon = \frac{f(a)}{2}$. Since $f(a) > 0$, it follows
+    $f(a) - \frac{f(a)}{2} = \frac{f(a)}{2} > 0$. By the above implication, there exists
+    a $\delta$ such that $|f(x) - f(a)| < \frac{f(a)}{2}$ holds for all $x \in (a - \delta, a + \delta)$.
+
+    It follows:
+    \[
+        \forall x \in (a - \delta, a + \delta), \:|f(x) - f(a)| < \frac{f(a)}{2} \implies f(x) > 0
+    \]
+
+    Which proves the theorem, as required.
+\end{proof}
+
+\end{document}
