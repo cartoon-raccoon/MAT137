@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+
+\begin{document}
+\textbf{(Q8)}
+
+\textit{(a)} True.
+
+\begin{proof}
+    From the limit definition of the derivative:
+    \begin{align*}
+        \ddx \left(f(x) - g(x)\right) & = 
+        \displim{x \to a} \frac{\left(f(x) - g(x)\right) - \left(f(a) - g(a)\right)}{x - a}\\
+        & = \displim{x \to a} \frac{f(x) - f(a) - g(x) + g(a)}{x - a}\\
+        & = \displim{x \to a} \frac{f(x) - f(a)}{x - a} + 
+        \displim{x \to a} \frac{g(x) - g(a)}{x - a}\\
+    \end{align*}
+
+    Therefore, since the limit of $(f - g)$ exists, these limits, which are the derivatives
+    of $f$ and $g$, have to exist, and thus $f$ and $g$ are differentiable.
+\end{proof}
+
+\textit{(b)} False.
+
+As a counterexample, consider $f(x) = 1$, and $g(x) = |x|$. It follows:
+\[
+    \frac{f(x)}{g(x)} = \frac{1}{|x|}
+\]
+
+Which is differentiable on its domain. Furthermore, $f$ is differentiable on its domain, but $g$ is not.
+
+\textit{(c)} False.
+
+As a counterexample, consider the function:
+\[
+    f(x) = \begin{cases}
+        0 \text{ if } x \in \Q\\
+        1 \text{ if } x \notin \Q\\
+    \end{cases}
+\]
+
+$f \circ f$ is differentiable, but $f$ is not.
+
+\textit{(d)} True.
+
+\begin{proof}
+    Since $f$ is differentiable, this implies $f$ is continuous. Since continuity is
+    preserved across composition (provied both functions are continuous), 
+    $f \circ f$ is continuous.
+\end{proof}
+\end{document}
