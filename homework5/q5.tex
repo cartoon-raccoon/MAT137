@@ -1,0 +1,54 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\fn}[3]{#1 \colon #2 \to #3}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q5)}
+
+\textit{(a)}
+
+Since $f$ is defined on a closed interval, this follows from the Extreme Value Theorem.
+
+\textit{(b)}
+
+We know that maximum and minimum values occur when $f'(x) = 0$. Therefore:
+
+\[
+    f'(x) = \frac{7}{3}x^{\frac{4}{3}} - \frac{7}{3}x^{-\frac{2}{3}}\\
+\]
+\begin{align*}
+    f'(x) = 0 & \implies \frac{7}{3}x^{\frac{4}{3}} = \frac{7}{3}x^{-\frac{2}{3}}\\
+    & \implies x^{\frac{4}{3}} = x^{-\frac{2}{3}}\\
+    & \implies x^{\frac{4}{3}} = \frac{1}{x^{\frac{2}{3}}}\\
+    & \implies x^{\frac{6}{3}} = x^2 = 1\\
+    & \implies x = \pm 1
+\end{align*}
+
+Therefore, $f$ has maximum and/or minimum points at $-1$ and 1. Then,
+
+\[
+    f''(x) = \frac{29}{9}x^{\frac{1}{3}} - \frac{14}{9}x^{-\frac{5}{3}}
+\]
+
+$f''(-1) < 0$, so $f$ is concave down at that point and thus $x = -1$
+is a maximum point, and $f''(1) > 0$, so $f$ is concave up at that point,
+and thus $x = 1$ is a minimum point.
+
+\end{document}

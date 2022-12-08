@@ -1,0 +1,83 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\fn}[3]{#1 \colon #2 \to #3}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q7)}
+
+\textit{(a)} True.
+
+\begin{proof}
+    Since $f$ is strictly increasing, we have
+    \[
+        \forall x_1, x_2 \in \R, x_1 < x_2 \implies f(x_1) < f(x_2)
+    \]
+
+    For the sake of contradiction, assume $f$ has a maximum or minimum. By
+    definition of a local minimum or maximum, we have that $x_1 \in \R$ is a
+    maximum iff
+
+    \[
+        \exists \delta > 0 \st x_2 \in (x_1 - \delta, x_1 + \delta) 
+        \implies f(x_2) \leq f(x_1)
+    \]
+
+    Let $x_1 = c$ and $x_2 = x_1 + \frac{\delta}{2}$. We have $x_1 < x_2$, so
+    $f(x_1) < f(x_2)$, which contradicts the assumption that $f$ has a maximum.
+
+    This argument also holds for a minimum.
+
+\end{proof}
+
+\textit{(b)} False.
+
+Let $\fn{f}{\R}{\R}$ be given by $f(x) = x^3$, which is strictly increasing
+and also differentiable. $f'(x) = 3x^2$, thus $f'(0) = 0$.
+
+\textit{(c)} True.
+
+The proof follows from proof of Q2. If $f \circ g$ is bijective, then $f$ must
+be surjective and $g$ must be injective. Thus if $f \circ f$ is bijective, then
+$f$ must be both surjective and injective, and thus bijective.
+
+\textit{(d)} True.
+
+\begin{proof}
+    By the definition of continuity, we have
+    \begin{gather*}
+        \forall \varepsilon > 0, \exists \delta > 0 \st \forall x \in \R,\\
+        |x - p| < \delta \implies |f'(x) - f'(p)| < \varepsilon
+    \end{gather*}
+
+    Let $\varepsilon = \displaystyle\frac{f'(p)}{2}$.
+    Since $f'$ is continuous, we know that such a $\delta$ exists to
+    satisfy this implication. Let $I$ be $(p - \delta, p + \delta)$.
+    Since $f'(p) > 0$,
+
+    \[
+        |x - p| < \delta \implies |f'(x) - f'(p)| < \frac{f'(p)}{2}
+        \implies f'(x) > 0
+    \]
+
+    Since $\forall x \in I,\; f'(x) > 0$, $f$ is strictly increasing,
+    and thus injective.
+\end{proof}
+
+\end{document}

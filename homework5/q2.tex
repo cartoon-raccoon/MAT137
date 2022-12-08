@@ -1,0 +1,69 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\fn}[3]{#1 \colon #2 \to #3}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q2)}
+
+\textit{(a)(i)}
+
+\begin{proof}
+    Since $f \circ g$ is invertible, it must be bijective and thus injective and
+    surjective.
+
+    By the definition of surjectivity of $f \circ g$:
+
+    \[
+        \forall y \in Z, \exists x \in X \st f(g(x)) = y
+    \]
+
+    Since by this definition, $f$ maps from every member in $g(X)$ to its codomain
+    $Z$, it must be surjective.
+\end{proof}
+
+\textit{(a)(ii)}
+
+\begin{proof}
+    By earlier definition, $f \circ g$ is injective and surjective.
+
+    Aiming for a contradiction, suppose that $g$ is not injective. Thus:
+    
+    \[
+        \exists x_1, x_2 \in X \st g(x_1) = g(x_2) \text{ and } x_1 \neq x_2
+    \]
+
+    Then $g(x_1) = g(x_2) \implies f(g(x_1)) = f(g(x_2))$. However, simultaneously,
+    $x_1 \neq x_2$. Thus, we have
+    
+    \[
+        f(g(x_1)) = f(g(x_2)) \text{ and } x_1 \neq x_2
+    \]
+
+    Which suggests $f \circ g$ is not injective.
+
+    This is a contradiction, and thus $g$ must be injective.
+\end{proof}
+
+\textit{(b)}
+
+Let $\fn{g}{\R}{\R}$ be given by $g(x) = e^x$, and $\fn{f}{\R}{(0, \infty)}$ be
+given by $f(x) = x^2$. Thus, $\fn{f \circ g}{\R}{(0, \infty)}$ is given by
+$f(g(x)) = (e^x)^2 = e^{2x}$, which is bijective and is therefore invertible.
+\end{document}

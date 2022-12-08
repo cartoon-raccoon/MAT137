@@ -1,0 +1,57 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\fn}[3]{#1 \colon #2 \to #3}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q6)}
+
+\begin{theorem}
+    $|\sin x| \leq |x|$ for all $x \neq 0$.
+\end{theorem}
+
+\begin{proof}
+    Fix $x$ as arbitrary.
+    
+    \textbf{Case 1: $x > 0$.} 
+    We define a closed interval $[0, x]$. By MVT applied on $\sin x$:
+
+    \begin{align*}
+        \forall x > 0,\; \exists c \in (0, x) & \st \frac{\sin x - \sin 0}{x - 0} = \cos c\\
+        & \implies \frac{\sin x}{x} = \cos c\\
+    \end{align*}
+
+    \textbf{Case 2: $x < 0$.}
+    We define a closed interval $[x, 0]$. By MVT applied on $\sin x$:
+
+    \begin{align*}
+        \forall x < 0,\; \exists c \in (x, 0) & \st \frac{\sin 0- \sin x}{0 - x} = \cos c\\
+        & \implies \frac{-\sin x}{-x} = \cos c\\
+        & \implies \frac{\sin x}{x} = \cos c
+    \end{align*}
+
+    In both cases, we have $\displaystyle\frac{\sin x}{x} = \cos c$. Then,
+
+    \begin{align*}
+        \frac{\sin x}{x} = \cos c & \implies \left|\frac{\sin x}{x}\right| = |\cos c| \leq 1\\
+        & \implies |\sin x| = |\cos c||x| \leq |x|
+    \end{align*}
+\end{proof}
+
+\end{document}

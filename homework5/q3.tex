@@ -1,0 +1,37 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\text{ s.t. }}
+\newcommand{\fn}[3]{#1 \colon #2 \to #3}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q3)}
+
+\textit{(a)} Since $(f^{-1})'(f(x)) = \displaystyle{\frac{1}{f'(x)}}$,
+$(f^{-1})'(4) = \displaystyle\frac{1}{f'(-1)} = 2$.
+
+\textit{(b)} $f(0) = 1 \implies f^{-1}(1) = 0$, and $f'(0) = -1.$ Thus,
+the tangent of $f$ at 0 is $-x$. Since the tangent of $f^{-1}$ is given 
+by a reflection across the line $x = y$, the tangent of $f^{-1}$ at 1
+is also $-x$.
+
+\textit{(c)} $f(1) = 2 \implies f^{-1}(2) = 1$. Since $f'(1) = 0$,
+the tangent line at $f^{-1}(2)$ will be vertical, and thus the derivative
+will be undefined and thus not differentiable.
+
+\end{document}
