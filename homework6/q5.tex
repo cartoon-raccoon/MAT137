@@ -1,0 +1,73 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\epsilon}{\varepsilon}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\sse}{\subseteq}
+\newcommand{\lsum}[2]{L_{#1}(#2)}
+\newcommand{\usum}[2]{U_{#1}(#2)}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q5)}
+
+\begin{theorem}
+    $f(x) = x^2 - 1$ is integrable on $[-1, 1]$.
+\end{theorem}
+
+\begin{proof}
+    We use the $\epsilon$-characterisation of integrability for this proof:
+
+    \[
+        \forall \epsilon > 0, \; \exists \text{ a partition $P$ of } [a,b] 
+        \colon \;\; U_P(f) - L_P (f) < \epsilon
+    \]
+
+    We evaluate $U_P(f) - L_P(f)$ by cases for odd and even $n$.
+
+    For even $n$:
+    \[
+        U_P(f) - L_P(f) = \frac{4}{n}
+    \]
+
+    For odd $n$:
+    \[
+        U_P(f) - L_P(f) = \frac{4}{n} - \frac{2}{n^3}
+    \]
+
+    Ultimately, we aim to prove:
+    \[
+        \forall \epsilon > 0, \exists n \in \N \colon \;\;
+        U_{P_n}(f) - L_{P_n}(f)< \epsilon
+    \]
+
+    Fix $\epsilon > 0$. For even $n$, let $n$ be a natural such that $n > \frac{4}{\epsilon}$.
+    Then \[
+        \frac{4}{n} < \frac{4}{\frac{4}{\epsilon}} \implies
+        \frac{4}{n} < 4 \cdot \frac{\epsilon}{4} \implies
+        \frac{4}{n} < \epsilon
+    \]
+
+    For odd $n$, let $n$ be a natural such that 
+    $n > \max\{\frac{8}{\epsilon}, \left(\frac{4}{\epsilon}\right)^{\frac{1}{3}}\}$. Then
+    \[
+        \frac{4}{n} - \frac{2}{n^3} < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+    \]
+
+    Since we have proven that this implication holds for all $n$, $f$ is integrable on $[-1, 1]$.
+
+\end{proof}
+
+\end{document}

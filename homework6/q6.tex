@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\sse}{\subseteq}
+\newcommand{\lsum}[2]{L_{#1}(#2)}
+\newcommand{\usum}[2]{U_{#1}(#2)}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q6)}
+
+\begin{theorem}
+    $\usum{P}{f} \geq \lsum{Q}{f}$ for any bounded function $f$ and partitions $P, Q$ of $[a, b]$.
+\end{theorem}
+
+\begin{proof}
+    Let $R$ be a common refinement of $P$ and $Q$ such that $R = P \cup Q$.
+
+    We have $P \sse R$ and $Q \sse R$. Then by earlier proof:
+
+    \begin{gather*}
+        P \sse R \implies \usum{P}{f} \geq \usum{R}{f}\\
+        Q \sse R \implies \lsum{R}{f} \geq \lsum{Q}{f}
+    \end{gather*}
+
+    We also have $\usum{R}{f} \geq \lsum{R}{f}$ by earlier proof. Thus:
+
+    \begin{gather*}
+        \usum{P}{f} \geq \usum{R}{f} \geq \lsum{R}{f} \geq \lsum{Q}{f}\\
+        \Downarrow\\
+        \usum{P}{f} \geq \lsum{Q}{f}
+    \end{gather*}
+
+    
+\end{proof}
+
+\end{document}

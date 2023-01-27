@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ddx}{\frac{d}{dx}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q4)}
+
+We observe that $f$ is symmetrical about $x = 0$, this we can take
+advantage of this symmetry to simplify our expressions for upper bounds.
+
+However, we need to consider separate cases for even $n$ and odd $n$.
+As such, for even $n$:
+
+\begin{align*}
+    U_{P_n} & = \frac{2}{n}\left[2 \cdot \sum_{i = 1}^{\frac{n}{2}}
+    f\left(\frac{2i}{n}\right)\right]\\
+    \\
+    L_{P_n} & = \frac{2}{n}\left[2 \cdot \sum_{i = 0}^{\frac{n}{2}}
+    f\left(\frac{2i}{n}\right)\right]\\
+\end{align*}
+
+And for odd $n$:
+
+\begin{align*}
+    U_{P_n} & = \frac{2}{n}\left[
+        f\left(\frac{1}{n}\right) + 2 \cdot 
+        \sum_{i = 1}^{\frac{n - 1}{2}}
+    f\left(\frac{2i + 1}{n}\right)\right]\\
+    \\
+    L_{P_n} & = \frac{2}{n}\left[
+        f\left(\frac{1}{n}\right) + 2 \cdot 
+        \sum_{i = 1}^{\frac{n - 1}{2}}
+    f\left(\frac{2i - 1}{n}\right)\right]\\
+\end{align*}
+
+\end{document}

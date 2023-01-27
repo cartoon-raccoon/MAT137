@@ -1,0 +1,63 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\; \colon \;}
+\newcommand{\sse}{\subseteq}
+\newcommand{\lsum}[2]{L_{#1}(#2)}
+\newcommand{\usum}[2]{U_{#1}(#2)}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q8)}
+
+\textit{(a)}
+Let $x, y \in [a, b]$ and $x < y$.
+We observe the following:
+
+\begin{gather*}
+    \exists \;t \in [x, y] \st t \in \Q\\
+    \exists \;s \in [x, y] \st s \notin \Q
+\end{gather*}
+
+Therefore, $\inf{f}$ on any subinterval of $[a, b]$ on $f$ is always 2022.
+In addition, $\sup{f}$ on any subinterval of $[a, b]$ on $f$ is always 2023.
+
+It follows that for any partition $P$ of $[a,b]$:
+
+\[
+    \lsum{P}{f} = 2022(b - a), \quad \usum{P}{f} = 2023(b - a)
+\]
+
+\textit{(b)}
+
+\begin{proof}
+    Since $\lsum{P}{f} = 2022(b - a)$ and $\usum{P}{f} = 2023(b - a)$ for
+    any partition $P$ of $[a, b]$ on $f$, we have:
+
+    \begin{gather*}
+        \overline{I}\;^{b}_{a} (f) = \inf\{ 2023(b - a) \} = 2023(b - a)\\
+        \underline{I}\;^{b}_{a} (f) = \sup\{ 2022(b - a) \} = 2022(b - a)
+    \end{gather*}
+
+    Since $a < b$, $b - a > 0$ and thus $2023(b - a) > 2022(b - a)$.
+
+    Therefore, the upper and lower integrals are not equal and $f$ is not
+    integrable.
+\end{proof}
+
+\end{document}

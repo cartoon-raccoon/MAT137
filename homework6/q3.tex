@@ -1,0 +1,41 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}}}
+\newcommand{\inflim}{\displim{x \to \infty}\;}
+
+\newcommand\lheq{\stackrel{\mathclap{\mbox{\tiny{L'H}}}}{=}}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q3)}
+
+We can express $\left(1 + \frac{M}{x}\right)^{Nx}$ as $e^{Nx \cdot \ln(1 + \frac{M}{x})}$.
+
+Then: \begin{align*}
+    \inflim Nx \cdot \ln(1 + \frac{M}{x}) & = N \cdot \frac{\ln\left(1 + \frac{M}{x}\right)}{\frac{1}{x}}\\
+    & \lheq \inflim N \cdot
+    \frac{\frac{1}{1 + \frac{M}{x}} \cdot \frac{-M}{x^2}}{-\frac{1}{x^2}}\\
+    & = \inflim N \cdot \frac{M}{\frac{M + x}{x}}\\
+    & = \inflim N \cdot M \cdot \frac{x}{x + M}\\
+    & \lheq \inflim N \cdot M \cdot \frac{1}{1}\\
+    & = \inflim M \cdot N
+\end{align*}
+
+Thus, $\inflim \left(1 + \frac{M}{x}\right)^{Nx} = e^{MN}$.
+
+\end{document}

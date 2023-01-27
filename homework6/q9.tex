@@ -1,0 +1,83 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\; \colon \;}
+\newcommand{\sse}{\subseteq}
+\newcommand{\lsum}[2]{L_{#1}(#2)}
+\newcommand{\usum}[2]{U_{#1}(#2)}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q9)}
+
+\textit{(a)} True.
+
+\begin{proof}
+    We observe that:
+
+    \begin{align*}
+        f + 2g & = 2g + f\\
+        & = 2g - 2f + 3f\\
+        & = 2(g - f) + 3f
+    \end{align*}
+
+    Since $f + 2g$ can be expressed as a combination and transformation
+    of two integrable functions, it is also integrable.
+\end{proof}
+
+\textit{(b)} False.
+
+As a counterexample, let $f = g = \chi_{\Q}$, where
+
+\[
+    \chi_{\Q}(x) = \begin{cases}
+        1 \; \colon x \in \Q\\
+        0 \; \colon x \notin \Q\\
+    \end{cases}
+\]
+
+Neither $f$ nor $g$ are integrable, while $(f \circ g) (x) = 1$, which is integrable.
+
+\textit{(c)} False.
+
+Let $\chi_{\Q}$ be the same as the one defined in (b). We define $f$ as:
+
+\[
+    f(x) = \begin{cases}
+        x^2 \; \colon x \in [-2 ,0] \cup [1, 6]\\
+        \chi_{\Q} \; \colon x \in (0, 1)
+    \end{cases}
+\]
+
+$f$ is integrable on $[-2, 0]$ and $[1, 6]$ but not on $(0, 1)$, so it is not
+integrable on $[-1, 4]$.
+
+\textit{(d)} False.
+
+Let $f$ be defined as:
+
+\[
+    f(x) = \begin{cases}
+        1 \; \colon x \in \Q\\
+        -1 \; \colon x \notin \Q\\
+    \end{cases}
+\]
+
+$f^2(x) = 1$, which is integrable, while $f$ is not.
+
+\end{document}

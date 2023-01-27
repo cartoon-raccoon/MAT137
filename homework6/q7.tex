@@ -1,0 +1,54 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+% i like the black square better.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+%\renewcommand{\implies}{\Rightarrow}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\st}{\; \colon \;}
+\newcommand{\sse}{\subseteq}
+\newcommand{\lsum}[2]{L_{#1}(#2)}
+\newcommand{\usum}[2]{U_{#1}(#2)}
+
+\newtheorem{theorem}{Theorem}
+
+% let's begin
+\begin{document}
+
+\textbf{(Q7)}
+
+\begin{theorem}
+    For any bounded function $f, g$ and partition $P$ of $[a, b]$, we have
+    \[\usum{P}{f + g} \geq \usum{P}{f} + \usum{P}{g}\]
+\end{theorem}
+
+\begin{proof}
+    For convenience, let $I = [a, b]$ and $\Delta_a = b - a$. We observe that
+    \begin{gather*}
+        \sup\{(f + g)(I)\} \geq \sup\{f(I)\} + \sup\{g(I)\}\\
+        \Downarrow\\
+        \sup\{(f + g)(I)\}\Delta_a \geq \sup\{f(I)\}\Delta_a + \sup\{g(I)\}\Delta_a \quad (1)
+    \end{gather*}
+
+    Therefore, for any partition $P = \{x_0, x_1, \ldots x_n\}$ of $[a, b]$:
+    \begin{gather*}
+        \usum{P}{f} = \sum_{i = 1}^{n} \sup f([x_{i - 1}, x_i]) \cdot (x_i - x_{i - 1})\\
+        \usum{P}{g} = \sum_{i = 1}^{n} \sup g([x_{i - 1}, x_i]) \cdot (x_i - x_{i - 1})\\
+        \usum{P}{f + g} = \sum_{i = 1}^{n} \sup (f + g)([x_{i - 1}, x_i]) \cdot (x_i - x_{i - 1})
+    \end{gather*}
+
+    Since (1) holds for every term in the summation, we can conclude that:
+    \[
+        \usum{P}{f + g} \geq \usum{P}{f} + \usum{P}{g}
+    \]
+\end{proof}
+
+\end{document}
