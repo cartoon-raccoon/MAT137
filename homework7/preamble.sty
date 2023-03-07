@@ -1,0 +1,67 @@
+\ProvidesPackage{preamble}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+%!=====================%
+%* general math commands
+%!=====================%
+
+% such that
+\newcommand{\st}{\; \colon \;}
+
+% number sets
+\newcommand{\N}{\mathbb{N}} % naturals
+\newcommand{\Z}{\mathbb{Z}} % integers
+\newcommand{\Q}{\mathbb{Q}} % rationals
+\newcommand{\R}{\mathbb{R}} % reals
+\newcommand{\C}{\mathbb{C}} % complexes
+%\newcommand{\Qu}{\mathbb{H}} % quaternions
+
+% shorthand for subseteq
+\newcommand{\sse}{\subseteq}
+
+%!=========================%
+%* integers and divisibility
+%!=========================%
+
+%\newcommand{\gcd}{\operatorname{gcd}}
+
+%!==============================%
+%* calculus and analysis commands
+%! =============================%
+
+% general limit
+\newcommand{\displim}[1]{\displaystyle{\lim_{#1}\;}}
+
+% limit to zero and limit to infinity
+\newcommand{\zerolim}{\displim{x \to 0}}
+\newcommand{\inflim}{\displim{x \to \infty}}
+
+% derivative
+\newcommand{\ddx}{\frac{d}{dx}}
+
+% integral: upper and lower sum
+\newcommand{\lsum}[2]{L_{#1}(#2)}
+\newcommand{\usum}[2]{U_{#1}(#2)}
+
+% l'hopital's rule
+\newcommand\lheq{\stackrel{\mathclap{\mbox{\tiny{L'H}}}}{=}}
+
+%!=====================%
+%* proofs and formatting
+%!=====================%
+\newcommand{\emptyline}{\hfill\break}
+% i prefer the black square.
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\oneq}[1]{\stackrel{\mathclap{\mbox{\tiny{#1}}}}{=}}
+
+\theoremstyle{definition}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{prop}{Proposition}[section]

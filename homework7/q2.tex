@@ -1,0 +1,43 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\usepackage{preamble}
+
+\begin{document}
+
+\textbf{(Q2)}
+
+\textit{(a)}
+
+\begin{align*}
+    \int \frac{t^4 + 2t + 1}{\sqrt[3]{t}} dt & =
+    \int (t^4 + 2t + 1)t^{-\frac{1}{3}} dt\\ & =
+    \int t^{\frac{11}{3}} dt + 2\int t^{\frac{2}{3}} dt
+    + \int t^{\frac{1}{3}} dt \\ & =
+    \frac{3}{14}t^{\frac{14}{3}} + \frac{6}{5}t^{\frac{5}{3}}
+    + \frac{3}{2}t^{\frac{2}{3}}
+\end{align*}
+
+\textit{(b)}
+
+\begin{align*}
+    \int (x + 1)x^{135} dx & = \int x^{136} dx + \int x^{135} dx\\
+    & = \frac{1}{137}x^{137} + \frac{1}{136}x^{136}
+\end{align*}
+
+\textit{(c)} Let $u = 2 \pi x$ Then $du = 2 \pi dx$. Then we have
+
+\[
+    \int_0^1 \sin(u) du = \int_{0}^{2 \pi} \sin(2 \pi x)
+    \frac{1}{2\pi} dx = \frac{-\cos(2 \pi x)}{2 \pi}
+    \big\vert_0^{2 \pi} = 0
+\]
+
+\textit{(d)}
+
+\[
+    \int_{-1}^{1} (e^t + t^3) dt = (e^t + \frac{1}{4}t^4)\big\vert^1_{-1}
+    = e - \frac{1}{e}
+\]
+\end{document}

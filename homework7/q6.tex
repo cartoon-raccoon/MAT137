@@ -1,0 +1,41 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\usepackage{preamble}
+
+\begin{document}
+
+\textbf{(Q6)}
+
+\textit{(a)} True.
+
+\begin{proof}
+    We observe that by properties of the integral,
+
+    \begin{align*}
+        \int_{-a}^a f(x) dx & = \int_{-a}^0 f(x) dx + \int_{0}^{a} f(x) dx\\
+        -\int_{-a}^0 f(x) dx & = \int_{0}^{-a} f(x) dx
+    \end{align*}
+
+    Since $f$ is even, $f(a) = f(-a)$:
+
+    \[
+        \int_0^a f(x)dx = \int_0^{-a} f(x) dx
+    \]
+
+    The result follows.
+
+\end{proof}
+
+\textit{(b)} True.
+
+\begin{proof}
+    Since $f(x)$ is continuous on $\R \setminus \{0\}$ and may or may not
+    have a discontinuity at 0, the proof follows by proof of Q3.
+\end{proof}
+
+\textit{(c)} False. 
+
+\textit{(d)} True.
+\end{document}
