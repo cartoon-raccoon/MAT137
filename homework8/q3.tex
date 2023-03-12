@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{graphicx}
+
+\graphicspath{.}
+
+\usepackage{preamble}
+
+\begin{document}
+\textbf{Q3}
+
+Using properties of integrals:
+
+\begin{align*}
+    \int^0_{-\infty} x^2e^x \;dx & = -\int^{-\infty}_0 x^2e^x \;dx\\
+    & = -\lim_{b \to -\infty} \left[\int^{b}_0 x^2e^x \;dx\right]\\
+\end{align*}
+Integrating by parts, we assign
+\[
+    u = x^2, \quad du = x^2\;dx, \quad
+    dv = e^x\;dx, \quad v = e^x
+\]
+\[
+    \int x^2e^x\;dx = x^2e^x - \int e^x2x\;dx
+\]
+Integrating by parts once again, we assign
+\[
+    u = 2x, \quad du = 2\;dx, \quad
+    dv = e^x\;dx, \quad v = e^x
+\]
+\[
+    \int 2xe^x\;dx = x^2e^x - 2\int e^x\;dx = 2xe^x - 2e^x
+\]
+So the improper integral evaluates to:
+\[
+    -\lim_{b \to -\infty} \left[e^x\left(x^2 - 2x - 2\right)\right]
+\]
+Which is clearly minus infinity, and so the integral diverges.
+\end{document}

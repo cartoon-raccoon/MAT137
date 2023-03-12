@@ -1,0 +1,48 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{graphicx}
+
+\graphicspath{.}
+
+\usepackage{preamble}
+
+\begin{document}
+\textbf{Q8}
+
+\textit{(a)} False.
+
+Let $f(x) = \displaystyle\frac{1}{x}$. Then
+\[
+    \int_1^\infty \frac{1}{x} \;dx =
+    \lim_{b \to \infty} \left[\ln x \big\vert_b^1\right] =
+    \lim_{b \to \infty} \ln x = \infty
+\]
+So $\displim{x \to \infty}{f(x)} = 0$, but the integral still diverges.
+
+\textit{(b)} True.
+
+\begin{proof}
+    First suppose $f$ has a horizontal asymptote $y = L$ as $x$
+    tends to infinity. Then since $f(x)$ is an antiderivative of $f'(x)$,
+    we have
+    \[
+        \int_1^\infty f'(x) \;dx = 
+        \lim_{b \to \infty} \left[f(b) - f(1)\right] = L - f(1)
+    \]
+    So the integral converges.
+
+    Now assume $\displaystyle{\int_1^\infty f'(x) \;dx}$ converges.
+    This means $\displim{b \to \infty}\left[f(b) - f(1)\right]$ approaches
+    a fixed value as $x \to \infty$, which by definition is an asymptote.
+\end{proof}
+
+\textit{(c)} True.
+
+Let $y = e^{-x^2}$, the integral of which is bounded. We then solve for x:
+\[
+    \ln y = -x^2 = \sqrt{-\ln y}
+\]
+
+which converges.
+\end{document}

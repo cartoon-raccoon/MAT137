@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{graphicx}
+
+\graphicspath{.}
+
+\usepackage{preamble}
+
+\begin{document}
+\textbf{Q4}
+
+\textit{(a)}
+Using integration by parts, we assign
+\[
+    u = t, \quad du = 1\;dx, \quad dv = e^{-t}\;dt, \quad v = -e^{-t}
+\]
+\[
+    \int te^{-t}\;dt = -te^{-t} + \int e^{-t}\;dx =
+    -te^{-t} -e^{-t} + c
+\]
+
+\textit{(b)}
+We use a substitution, $u = \sqrt{x}, du = \frac{1}{2\sqrt{x}\;dx}$.
+Then
+\[
+    2\int -ue^{-u} \;du = -u^{-u} - e^{-u} + c
+\]
+
+\textit{(c)}
+By properties of absolute value, the function is even,
+so the two integrals are equal.
+
+\textit{(d)}
+Since the function is even, it suffices to determine whether
+one side of the doubly improper integral converges or diverges.
+\[
+    \int_0^\infty e^{-\sqrt{|x|}}
+    = \inflim 2(-\sqrt{|x|}e^{-\sqrt{|x|}} - e^{-\sqrt{|x|}})\big\vert_0^b
+\]
+Since there is a defined limit, the integral converges.
+\end{document}

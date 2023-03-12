@@ -1,0 +1,37 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\parindent}{0pt}
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage{graphicx}
+
+\graphicspath{.}
+
+\usepackage{preamble}
+
+\begin{document}
+\textbf{Q2}
+
+\textit{(a)}
+Using the substitution $u = t^2, du = 2t dt$:
+
+\begin{align*}
+    \int t \arctan(t^2)dt & =
+    \frac{1}{2} \int \arctan(u)du\\
+    & = \frac{1}{2} \left(
+        u \arctan(u) - \frac{1}{2} \ln |u^2 + 1|
+    \right) + c\\
+    & = \frac{1}{2} \left(
+        t^2 \arctan(t^2) - \frac{1}{2} \ln |t^4 + 1|
+    \right) + c
+\end{align*}
+The antiderivative of $\arctan t$ is given by earlier proof.
+
+\textit{(b)} Using integration by parts:
+\[
+    u = u, \quad du = 1, \quad dv = f''(u), \quad v = f'(u)
+\]
+Then
+\[
+    \int_0^1 u f''(u) =
+    u f'(u) - f(u)\big\vert^1_0 = -6
+\]
+\end{document}
